@@ -145,6 +145,21 @@ pub trait HasContext {
         pixels: PixelPackData,
     );
 
+    unsafe fn get_tex_sub_image(
+        &self,
+        target: u32,
+        level: i32,
+        x: i32,
+        y: i32,
+        z: i32,
+        width: i32,
+        height: i32,
+        depth: i32,
+        format: u32,
+        ty: u32,
+        pixels: PixelPackData,
+    );
+
     unsafe fn create_program(&self) -> Result<Self::Program, String>;
 
     unsafe fn is_program(&self, program: Self::Program) -> bool;
